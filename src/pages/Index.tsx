@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import ScrollIndicator from "@/components/ScrollIndicator";
 // import heroBg from "@/assets/hero-bg.jpg";
 import sectionWork from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
@@ -16,28 +17,26 @@ const fadeUp = {
 } as const;
 
 const Index = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const videoOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0.2]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  
   return (
-    <div className="bg-background">
-      {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        
-        {/* Usando imagem */}
-        {/* <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        /> */}
-
-        { /* Usando Youtube*/}
-        {/* <iframe 
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://www.youtube.com/watch?v=TU-a3ntzSAA"
-          title="Teste"
-          frameBorder="0"
-          allow="autoplay: fullscreen"
-          allowFullScreen
-        /> */}
-
-        {/* Usando vídeo */}
+    <div ref={containerRef} className="relative">
+      {/* Fixed Video Background */}
+      <motion.div 
+        className="fixed inset-0 w-full h-screen overflow-hidden z-0"
+        style={{ 
+          scale: videoScale,
+          opacity: videoOpacity
+        }}
+      >
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src={heroBg}
@@ -46,9 +45,11 @@ const Index = () => {
           muted
           playsInline  
         />
-
         <div className="absolute inset-0 overlay-dark" />
+      </motion.div>
 
+      {/* Hero Content */}
+      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden z-10">
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -70,14 +71,23 @@ const Index = () => {
         <ScrollIndicator />
       </section>
 
-      {/* Section 1 - Sobre */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-24 md:py-32 px-6 md:px-12"
+      {/* Content Container - This will cover the video */}
+      <motion.div 
+        className="relative z-20 bg-background shadow-2xl"
+        style={{
+          borderRadius: "40px 40px 0 0",
+          marginTop: "-40px",
+          y: contentY
+        }}
       >
+        {/* Section 1 - Sobre */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="py-24 md:py-32 px-6 md:px-12 pt-32"
+        >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="flex flex-col gap-6 order-2 md:order-1">
             <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
@@ -173,6 +183,7 @@ const Index = () => {
           </div>
         </div>
       </motion.section>
+      </motion.div>
     </div>
   );
 };
