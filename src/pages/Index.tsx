@@ -70,7 +70,42 @@ const Index = () => {
         <ScrollIndicator />
       </section>
 
-      {/* Section 1 - Trabalhos */}
+      {/* Section 1 - Sobre */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="py-24 md:py-32 px-6 md:px-12"
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="flex flex-col gap-6 order-2 md:order-1">
+            <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+              Não produzimos conteúdo.<br />
+              <span className="text-gradient-gold">Construímos imagem.</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
+              A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia. Não buscamos volume. Buscamos projetos que exigem mais do que apenas execução.
+            </p>
+            <Link
+              to="/sobre"
+              className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary hover:border-foreground pb-1"
+            >
+              → Conheça a Vinden
+            </Link>
+          </div>
+          <div className="overflow-hidden order-1 md:order-2">
+            <img
+              src={sectionAbout}
+              alt="Sobre a Vinden Film"
+              className="w-full h-[400px] md:h-[550px] object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 2 - Trabalhos */}
       <motion.section
         variants={fadeUp}
         initial="hidden"
@@ -92,9 +127,7 @@ const Index = () => {
               Imagens com intenção
             </h2>
             <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-              Cada enquadramento, movimento e cor comunica algo — ou denuncia uma falta de rigor. 
-              Nosso trabalho integra direção, captação e color grading como um único processo criativo, 
-              construindo narrativas visuais que posicionam marcas e artistas em outro patamar.
+              Cada escolha visual comunica algo, ou expõe a falta de direção. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo. O resultado são narrativas visuais que constroem percepção e consolidam o posicionamento de cada projeto.
             </p>
             <Link
               to="/trabalhos"
@@ -102,43 +135,6 @@ const Index = () => {
             >
               Ver Trabalhos
             </Link>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Section 2 - Sobre */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-24 md:py-32 px-6 md:px-12"
-      >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div className="flex flex-col gap-6 order-2 md:order-1">
-            <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
-              Não produzimos conteúdo.<br />
-              <span className="text-gradient-gold">Construímos imagem.</span>
-            </h2>
-            <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-              A Vinden Film existe para construir imagens com intenção. Trabalhamos com marcas, 
-              artistas e líderes que entendem que estética não é detalhe — é estratégia. 
-              Não buscamos volume. Buscamos projetos que exigem mais do que execução.
-            </p>
-            <Link
-              to="/sobre"
-              className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary hover:border-foreground pb-1"
-            >
-              Saber Mais
-            </Link>
-          </div>
-          <div className="overflow-hidden order-1 md:order-2">
-            <img
-              src={sectionAbout}
-              alt="Sobre a Vinden Film"
-              className="w-full h-[400px] md:h-[550px] object-cover"
-              loading="lazy"
-            />
           </div>
         </div>
       </motion.section>
@@ -166,9 +162,7 @@ const Index = () => {
               <span className="text-gradient-gold">seu projeto.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-              Se você busca uma produção audiovisual que vai além da execução técnica, 
-              que entende o poder da imagem como ferramenta estratégica — 
-              entre em contato. Queremos ouvir sobre o seu projeto.
+              Se você busca uma produção audiovisual que vai além da execução técnica, que entende o poder da imagem como ferramenta estratégica, entre em contato. Queremos ouvir sobre o seu projeto
             </p>
             <Link
               to="/contato"

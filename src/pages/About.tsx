@@ -98,9 +98,7 @@ const About = () => {
             Sobre a Vinden
           </h1>
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            A Vinden Film não existe para produzir conteúdo. Existe para construir imagens com intenção.
-            Acreditamos que sua imagem define até onde você chega — cada enquadramento, movimento e cor 
-            comunica algo, ou denuncia uma falta de rigor.
+            A Vinden existe para construir imagem com intenção. Cada projeto começa na definição de direção, narrativa e posicionamento, porque não é o volume que constrói relevância, mas a clareza de como um artista é percebido. Por isso, não trabalhamos para produzir mais, mas para construir presença, unindo estratégia, identidade e execução em cada projeto.
           </p>
         </motion.div>
       </section>
@@ -114,24 +112,17 @@ const About = () => {
         className="py-24 md:py-32 px-6 md:px-12"
       >
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-foreground font-body text-base md:text-lg leading-relaxed mb-8">
-            Nosso trabalho integra direção, captação e color grading como um único processo.
-          </p>
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8">
-            Trabalhamos com marcas, artistas e líderes que entendem que estética não é detalhe, 
-            mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
+            Trabalhamos com artistas e marcas que entendem que estética não é detalhe, mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
           </p>
-          <p className="text-foreground font-display text-2xl md:text-3xl font-light italic">
-            A Vinden não busca volume.<br />
-            Busca projetos que exigem mais do que execução.
+          <p className="text-foreground font-display text-2xl md:text-3xl font-light">
+            O que você mostra define o que percebem
           </p>
         </div>
       </motion.section>
 
       {/* Founders */}
-
-      {/* Como no figma */}
-      {/* <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32">
         <motion.h2
           variants={fadeUp}
           initial="hidden"
@@ -139,19 +130,11 @@ const About = () => {
           viewport={{ once: true }}
           className="font-display text-3xl md:text-5xl font-light text-center text-foreground mb-20 px-6"
         >
-          Quem faz a Vinden
+          Fundadores
         </motion.h2>
 
-        <div className="space-y-24 md:space-y-0">
-          {founders.map((founder, i) => (
-            <FounderCard key={founder.name} founder={founder} index={i} />
-          ))}
-        </div>
-      </section> */}
-
-
         {/* Com uma pequena foto */}
-       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           {founders.map((founder, i) => (
             <motion.div
               key={founder.name}
@@ -185,8 +168,7 @@ const About = () => {
           <br></br>
           <br></br>
         </div>
-
-
+      </section>
     </div>
   );
 };
