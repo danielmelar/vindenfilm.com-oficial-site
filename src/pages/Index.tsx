@@ -28,11 +28,12 @@ const Index = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   
   return (
-    <div ref={containerRef} className="relative">
-      {/* Fixed Video Background */}
+    <div ref={containerRef} className="relative overflow-hidden">
+      {/* Fixed Video Background - Only visible during hero section */}
       <motion.div 
-        className="fixed inset-0 w-full h-screen overflow-hidden z-0"
+        className="absolute inset-0 w-full overflow-hidden"
         style={{ 
+          height: "100vh",
           scale: videoScale,
           opacity: videoOpacity
         }}
@@ -73,7 +74,7 @@ const Index = () => {
 
       {/* Content Container - This will cover the video */}
       <motion.div 
-        className="relative z-20 bg-background shadow-2xl"
+        className="relative z-30 bg-background shadow-2xl"
         style={{
           borderRadius: "40px 40px 0 0",
           marginTop: "-40px",
@@ -182,8 +183,11 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </motion.section>
+        </motion.section>
       </motion.div>
+      
+      {/* Footer Space - Garante que o footer tenha espaço */}
+      <div className="relative z-40 bg-background h-20"></div>
     </div>
   );
 };

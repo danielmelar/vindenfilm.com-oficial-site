@@ -5,14 +5,14 @@ import ScrollToTop from "@/ui/ScrollToTop";
 
 const Layout = () => {
   return (
-    <>
+    <div className="relative z-40">
       <ScrollToTop />
       <Navbar />
-      <main className="min-h-screen">
+      <main className="w-full">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
