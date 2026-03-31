@@ -14,32 +14,25 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative h-screen bg-background overflow-hidden">
       {/* Background */}
       <div
-        className="fixed inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url(${contactBg})` }}
       />
-      <div className="fixed inset-0 overlay-dark-heavy" />
+      <div className="absolute inset-0 overlay-dark-heavy" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center pt-20 pb-12 px-6">
+      <div className="relative z-10 h-full flex items-center justify-center px-6 pt-16 pb-8 md:pt-20 md:pb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-16"
+          className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 h-full md:h-auto"
         >
           {/* Info */}
-          <div className="flex flex-col justify-center gap-8">
-            {/* <h1 className="font-display text-4xl md:text-6xl font-light text-foreground tracking-wide">
-              Contato
-            </h1> */}
-            {/* <p className="text-muted-foreground font-body text-sm leading-relaxed">
-              Tem um projeto que exige mais do que execução? Vamos conversar.
-            </p> */}
-
-            <div className="flex flex-col gap-5 mt-4">
+          <div className="flex flex-col justify-center gap-6 md:gap-8">
+            <div className="flex flex-col gap-4 md:gap-5">
               <a href="mailto:contato@vindenfilm.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-body text-sm">
                 <Mail size={18} className="text-primary" />
                 contato@vindenfilm.com
@@ -54,7 +47,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-5 mt-4">
+            <div className="flex gap-5">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram size={22} />
               </a>
@@ -65,7 +58,7 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5 h-full justify-center">
             <div>
               <label className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-2 block">
                 Nome
@@ -99,7 +92,7 @@ const Contact = () => {
               <textarea
                 required
                 maxLength={1000}
-                rows={5}
+                rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full bg-secondary/50 border border-border text-foreground font-body text-sm px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none"
