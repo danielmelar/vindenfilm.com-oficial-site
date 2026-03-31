@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ChevronDown } from "lucide-react"; // Import necessário para o ícone
-//import ScrollIndicator from "@/components/ScrollIndicator"; // Removido para usar o customizado abaixo
+import { ChevronDown, Instagram, Youtube } from "lucide-react"; 
 import sectionWork from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
 import sectionAbout from "@/assets/SnapInsta.to_572603706_17856753330542776_675896164524725598_n.jpg";
 import sectionContact from "@/assets/SnapInsta.to_612548780_17865722814542776_7133087245881705495_n.jpg";
@@ -21,12 +20,11 @@ const Index = () => {
   });
   
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  // Vídeo começa a sumir um pouco antes para suavizar a transição
   const videoOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
     <div ref={containerRef} className="relative overflow-x-hidden bg-background">
-      {/* --- HERO VIDEO SECTION (FUNDO FIXO) --- */}
+      {/* --- HERO VIDEO SECTION --- */}
       <motion.div 
         className="fixed inset-0 w-full h-screen overflow-hidden z-0"
         style={{ 
@@ -42,41 +40,30 @@ const Index = () => {
           muted
           playsInline  
         />
-        {/* Overlay sutil constante para contraste, mas sem gradiente inferior */}
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
-      {/* --- HERO CONTENT (AVISO DE MAIS / SCROLL) --- */}
-      {/* Esta seção é transparente e serve apenas para posicionar o aviso */}
+      {/* Hero Scroll Indicator */}
       <section className="relative h-screen flex items-end justify-center z-10 pb-12 pointer-events-none">
         <motion.div 
           className="flex flex-col items-center gap-2"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
         >
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-white opacity-80 font-body">
-            Mais
+          <span className="text-[10px] uppercase tracking-[0.4em] text-white opacity-60 font-body">
+            Role para ver
           </span>
-          <ChevronDown className="w-5 h-5 text-white opacity-80 animate-bounce" />
+          <ChevronDown className="w-5 h-5 text-white opacity-60 animate-bounce" />
         </motion.div>
       </section>
 
-      {/* --- CONTENT CONTAINER (SOBRE, TRABALHOS, ETC.) --- */}
-      <motion.div 
-        className="relative z-20 bg-background"
-        style={{ marginTop: "0vh" }} // Começa logo após o hero acabar
-      >
-        {/* EFEITO ESFUMAÇADO (TRANSITION FADE)
-          Posicionado absolutamente ACIMA do container de conteúdo, 
-          ele vai "sobrepor" a base do vídeo assim que o usuário começar a rolar.
-        */}
-        <div 
-          className="absolute -top-96 left-0 right-0 h-96 bg-gradient-to-t from-background via-background/70 to-transparent pointer-events-none" 
-        />
+      {/* --- CONTENT CONTAINER --- */}
+      <motion.div className="relative z-20 bg-background">
+        {/* EFEITO ESFUMAÇADO (TRANSITION FADE) */}
+        <div className="absolute -top-96 left-0 right-0 h-96 bg-gradient-to-t from-background via-background/70 to-transparent pointer-events-none" />
         
-        {/* Pt-20 garante que o texto não colida com o início do fade */}
-        <div className="relative z-10 pt-20">
+        <div className="relative z-10">
           {/* Section 1 - Sobre */}
           <motion.section
             variants={fadeUp}
@@ -92,22 +79,14 @@ const Index = () => {
                   <span className="text-gradient-gold">Construímos imagem.</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
-                  A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia. Não buscamos volume. Buscamos projetos que exigem mais do que apenas execução.
+                  A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia.
                 </p>
-                <Link
-                  to="/sobre"
-                  className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1"
-                >
+                <Link to="/sobre" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                   → Conheça a Vinden
                 </Link>
               </div>
               <div className="overflow-hidden order-1 md:order-2 rounded-sm shadow-2xl">
-                <img
-                  src={sectionAbout}
-                  alt="Sobre a Vinden Film"
-                  className="w-full h-[400px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <img src={sectionAbout} alt="Sobre" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
               </div>
             </div>
           </motion.section>
@@ -118,28 +97,20 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="py-24 md:py-32 px-6 md:px-12 bg-black/20"
+            className="py-24 md:py-32 px-6 md:px-12 bg-black/10"
           >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
               <div className="overflow-hidden rounded-sm shadow-2xl">
-                <img
-                  src={sectionWork}
-                  alt="Trabalho cinematográfico"
-                  className="w-full h-[400px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <img src={sectionWork} alt="Trabalho" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
               </div>
               <div className="flex flex-col gap-6">
                 <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
                   Imagens com intenção
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-                  Cada escolha visual comunica algo, ou expõe a falta de direção. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo.
+                  Cada escolha visual comunica algo. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo.
                 </p>
-                <Link
-                  to="/trabalhos"
-                  className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1"
-                >
+                <Link to="/trabalhos" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                   Ver Trabalhos
                 </Link>
               </div>
@@ -152,16 +123,11 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="py-24 md:py-32 px-6 md:px-12 pb-32"
+            className="py-24 md:py-32 px-6 md:px-12"
           >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
               <div className="overflow-hidden order-1 md:order-2 rounded-sm shadow-2xl">
-                <img
-                  src={sectionContact}
-                  alt="Contato Vinden Film"
-                  className="w-full h-[400px] md:h-[550px] object-cover"
-                  loading="lazy"
-                />
+                <img src={sectionContact} alt="Contato" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
               </div>
               <div className="flex flex-col gap-6 order-2 md:order-1">
                 <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
@@ -169,12 +135,9 @@ const Index = () => {
                   <span className="text-gradient-gold">seu projeto.</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-                  Se você busca uma produção audiovisual que vai além da execução técnica, entre em contato.
+                  Se você busca uma produção audiovisual estratégica, entre em contato conosco.
                 </p>
-                <Link
-                  to="/contato"
-                  className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1"
-                >
+                <Link to="/contato" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                   Contato
                 </Link>
               </div>
