@@ -20,12 +20,12 @@ const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "start end"]
   });
   
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const videoOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0.2]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  // Removendo o contentY que estava causando o espaço extra
   
   return (
     <div ref={containerRef} className="relative overflow-hidden">
@@ -77,8 +77,7 @@ const Index = () => {
         className="relative z-30 bg-background shadow-2xl"
         style={{
           borderRadius: "40px 40px 0 0",
-          marginTop: "-40px",
-          y: contentY
+          marginTop: "-40px"
         }}
       >
         {/* Section 1 - Sobre */}
@@ -150,14 +149,14 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Section 3 - Contato */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-24 md:py-32 px-6 md:px-12"
-      >
+        {/* Section 3 - Contato */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="py-24 md:py-32 px-6 md:px-12 pb-12"
+        >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="overflow-hidden">
             <img
@@ -185,9 +184,6 @@ const Index = () => {
         </div>
         </motion.section>
       </motion.div>
-      
-      {/* Footer Space - Garante que o footer tenha espaço */}
-      <div className="relative z-40 bg-background h-20"></div>
     </div>
   );
 };
