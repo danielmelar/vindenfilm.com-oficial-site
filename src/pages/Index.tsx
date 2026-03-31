@@ -74,12 +74,23 @@ const Index = () => {
 
       {/* Content Container - This will cover the video */}
       <motion.div 
-        className="relative z-30 bg-background shadow-2xl"
+        className="relative z-30 bg-background"
         style={{
-          borderRadius: "40px 40px 0 0",
-          marginTop: "-40px"
+          marginTop: "-20px",
         }}
       >
+        {/* Blur transition at the top */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-24"
+          style={{
+            background: "linear-gradient(180deg, transparent 0%, rgba(13, 13, 13, 0.1) 30%, rgba(13, 13, 13, 0.8) 70%, rgba(13, 13, 13, 1) 100%)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)"
+          }}
+        />
+        
+        {/* Content with proper spacing from blur */}
+        <div className="relative z-10 pt-12">
         {/* Section 1 - Sobre */}
         <motion.section
           variants={fadeUp}
@@ -182,7 +193,8 @@ const Index = () => {
             </Link>
           </div>
         </div>
-        </motion.section>
+      </motion.section>
+        </div>
       </motion.div>
     </div>
   );
