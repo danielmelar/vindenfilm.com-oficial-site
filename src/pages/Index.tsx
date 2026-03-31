@@ -58,14 +58,14 @@ const Index = () => {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex items-center gap-4 md:gap-8"
           >
-            {["PRODUÇÃO", "DIREÇÃO", "EXCELÊNCIA"].map((word, i) => (
+            {/* {["PRODUÇÃO", "DIREÇÃO", "EXCELÊNCIA"].map((word, i) => (
               <span
                 key={word}
                 className="text-xs md:text-sm  uppercase tracking-[0.3em] text-muted-foreground font-body"
               >
                 {word}
               </span>
-            ))}
+            ))} */}
           </motion.div>
         </div>
 
