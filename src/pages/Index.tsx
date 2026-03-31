@@ -123,7 +123,7 @@ const Index = () => {
             />
           </div>
           <div className="flex flex-col gap-6">
-            <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+            <h2 className="font-artistic text-3xl md:text-5xl font-normal text-foreground leading-tight">
               Imagens com intenção
             </h2>
             <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">

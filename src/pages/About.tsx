@@ -94,7 +94,7 @@ const About = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative z-10 max-w-3xl text-center px-6"
         >
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide mb-8">
+          <h1 className="font-display-bold text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide mb-8">
             Sobre a Vinden
           </h1>
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
@@ -128,7 +128,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="font-display text-3xl md:text-5xl font-light text-center text-foreground mb-20 px-6"
+          className="font-display-bold text-3xl md:text-5xl font-medium text-center text-foreground mb-20 px-6"
         >
           Fundadores
         </motion.h2>
