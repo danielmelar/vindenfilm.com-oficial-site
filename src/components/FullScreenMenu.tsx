@@ -50,7 +50,7 @@ const FullScreenMenu = ({ isOpen, onClose }: FullScreenMenuProps) => {
           </button>
 
           {/* Menu items */}
-          <div className="relative z-10 flex flex-col items-center gap-8">
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 flex-wrap justify-center px-6">
             {menuItems.map((item, i) => (
               <motion.div
                 key={item.path}
@@ -61,7 +61,7 @@ const FullScreenMenu = ({ isOpen, onClose }: FullScreenMenuProps) => {
               >
                 <button
                   onClick={() => handleLinkClick(item.path)}
-                  className="font-display text-5xl md:text-7xl font-light text-foreground hover:text-primary transition-colors duration-300 tracking-wide"
+                  className="font-display text-3xl md:text-5xl font-light text-foreground hover:text-primary transition-colors duration-300 tracking-wide"
                 >
                   {item.label}
                 </button>

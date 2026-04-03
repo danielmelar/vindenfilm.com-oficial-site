@@ -51,10 +51,10 @@ const Index = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <span className="text-[10px] uppercase tracking-[0.4em] text-white opacity-60 font-body">
+          {/* <span className="text-[10px] uppercase tracking-[0.4em] text-white opacity-60 font-body">
             mais
           </span>
-          <ChevronDown className="w-5 h-5 text-white opacity-60 animate-bounce" />
+          <ChevronDown className="w-5 h-5 text-white opacity-60 animate-bounce" /> */}
         </motion.div>
       </section>
 
