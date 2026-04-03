@@ -43,6 +43,11 @@ const Footer = () => {
           <p className="text-muted-foreground text-xs font-body">
             © {new Date().getFullYear()} Vinden Film. Todos os direitos reservados.
           </p>
+          <p className="text-muted-foreground text-xs font-body">
+            Criado por 
+
+            <Link to="https://danielmelar.com" className="transition-colors"> Daniel Aguilar</Link>
+          </p>
         </div>
       </div>
     </footer>

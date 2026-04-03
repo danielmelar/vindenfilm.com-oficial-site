@@ -1,61 +1,54 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
-
-import work4 from "@/assets/hero.mp4"
+import work4 from "@/assets/hero.mp4";
 
 const isYoutubeUrl = (url: string) => url.includes("youtube.com");
 const isVideoFile = (url: string) => url.endsWith(".mp4") || url.endsWith(".webm");
 
-const renderMedia = (video: string, image: string) => {
-  // youtube
-  if (isYoutubeUrl(video)) {
-    return (
-      <iframe 
-          className="absolute inset-0 w-full h-full object-cover"
-          src={`${video}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&playlist=${video.split('/').pop()}`}
-          title="Teste"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            objectFit: "cover",
-            width: "100%",
-            height: "100%",
-          }}
-        />
-    )
-  }
+const ParallaxProjectMedia = ({ video, image }: { video: string, image: string }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
 
-  // local file 
-  if (isVideoFile(video)) {
-    return (
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src={video}
-        autoPlay
-        loop
-        muted
-        playsInline  
-      />
-    )
-  }
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
-  // fallback to image
-  if (image) {
-    return (
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-    )
-  }
-}
+  return (
+    <div ref={ref} className="absolute inset-0 z-0 overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0 h-[120%] top-[-10%]">
+        {isYoutubeUrl(video) ? (
+          <iframe 
+            className="w-full h-full object-cover pointer-events-none scale-110"
+            src={`${video}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&playlist=${video.split('/').pop()}`}
+            title="Project Video"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        ) : isVideoFile(video) ? (
+          <video
+            className="w-full h-full object-cover"
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline  
+          />
+        ) : (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        )}
+      </motion.div>
+    </div>
+  );
+};
 
 const projects = [
   {
@@ -99,18 +92,6 @@ const projects = [
 const Work = () => {
   return (
     <div className="bg-background">
-      {/* Hero title */}
-      {/* <section className="h-[40vh] flex items-end pb-12 px-6 md:px-12">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide"
-        >
-          Trabalhos
-        </motion.h1>
-      </section> */}
-
       {/* Work sections - each ~90vh */}
       {projects.map((project, i) => (
         <motion.section
@@ -121,10 +102,9 @@ const Work = () => {
           transition={{ duration: 0.8 }}
           className="relative h-[90vh] overflow-hidden"
         >
-          {/* Background */}
-          {renderMedia(project.video, project.image)}
+          {/* Background with Parallax */}
+          <ParallaxProjectMedia video={project.video} image={project.image} />
           
-
           <div className="absolute inset-0 overlay-dark-heavy" />
 
           {/* Content */}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ChevronDown, Instagram, Youtube } from "lucide-react"; 
 import sectionWork from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
 import sectionAbout from "@/assets/SnapInsta.to_572603706_17856753330542776_675896164524725598_n.jpg";
@@ -10,6 +11,30 @@ const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 } as const;
+
+const ParallaxImage = ({ src, alt, direction = "right" }: { src: string, alt: string, direction?: "left" | "right" }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
+  return (
+    <div ref={ref} className={`absolute ${direction === "right" ? "right-0" : "left-0"} top-0 bottom-0 w-full md:w-3/4 z-0 opacity-40 md:opacity-60 overflow-hidden`}>
+      <motion.img 
+        src={src} 
+        alt={alt} 
+        style={{ y }}
+        className="w-full h-[120%] object-cover absolute top-0" 
+        loading="lazy" 
+      />
+      <div className={`absolute inset-0 bg-gradient-to-${direction === "right" ? "r" : "l"} from-background via-background/50 to-transparent`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+    </div>
+  );
+};
 
 const Index = () => {
   return (
@@ -70,11 +95,11 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="py-24 md:py-32 px-6 md:px-12"
+            className="relative min-h-[80vh] flex items-center py-24 md:py-32 px-6 md:px-12 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-              <div className="flex flex-col gap-6 order-2 md:order-1">
-                <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+            <div className="max-w-7xl mx-auto w-full relative z-10">
+              <div className="flex flex-col gap-6 md:w-1/2">
+                <h2 className="font-display text-4xl md:text-6xl font-light text-foreground leading-tight">
                   Não produzimos conteúdo.<br />
                   <span className="text-gradient-gold">Construímos imagem.</span>
                 </h2>
@@ -85,10 +110,9 @@ const Index = () => {
                   Conheça a Vinden
                 </Link>
               </div>
-              <div className="overflow-hidden order-1 md:order-2 rounded-sm shadow-2xl">
-                <img src={sectionAbout} alt="Sobre" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
-              </div>
             </div>
+            {/* Background Integrated Image */}
+            <ParallaxImage src={sectionAbout} alt="Sobre" direction="right" />
           </motion.section>
 
           {/* Section 2 - Trabalhos */}
@@ -97,17 +121,15 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="py-24 md:py-32 px-6 md:px-12 bg-black/10"
+            className="relative min-h-[80vh] flex items-center py-24 md:py-32 px-6 md:px-12 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-              <div className="overflow-hidden rounded-sm shadow-2xl">
-                <img src={sectionWork} alt="Trabalho" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
-              </div>
-              <div className="flex flex-col gap-6">
-                <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
-                  Imagens com intenção
+            <div className="max-w-7xl mx-auto w-full relative z-10 flex justify-end">
+              <div className="flex flex-col gap-6 md:w-1/2">
+                <h2 className="font-display text-4xl md:text-6xl font-light text-foreground leading-tight">
+                  Imagens com<br />
+                  <span className="text-gradient-gold">intenção.</span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
+                <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
                   Cada escolha visual comunica algo. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo.
                 </p>
                 <Link to="/trabalhos" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
@@ -115,6 +137,8 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+            {/* Background Integrated Image */}
+            <ParallaxImage src={sectionWork} alt="Trabalho" direction="left" />
           </motion.section>
 
           {/* Section 3 - Contato */}
@@ -123,25 +147,24 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="py-24 md:py-32 px-6 md:px-12"
+            className="relative min-h-[80vh] flex items-center py-24 md:py-32 px-6 md:px-12 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-              <div className="overflow-hidden order-1 md:order-2 rounded-sm shadow-2xl">
-                <img src={sectionContact} alt="Contato" className="w-full h-[400px] md:h-[550px] object-cover" loading="lazy" />
-              </div>
-              <div className="flex flex-col gap-6 order-2 md:order-1">
-                <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+            <div className="max-w-7xl mx-auto w-full relative z-10">
+              <div className="flex flex-col gap-6 md:w-1/2">
+                <h2 className="font-display text-4xl md:text-6xl font-light text-foreground leading-tight">
                   Vamos conversar sobre<br />
                   <span className="text-gradient-gold">seu projeto.</span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base">
-                  Se você busca uma produção audiovisual estratégica, entre em contato conosco.
+                <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
+                  Se você busca uma produção audiovisual estratégica, entre em contato conosco para construir algo memorável.
                 </p>
                 <Link to="/contato" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                   Contato
                 </Link>
               </div>
             </div>
+            {/* Background Integrated Image */}
+            <ParallaxImage src={sectionContact} alt="Contato" direction="right" />
           </motion.section>
         </div>
       </motion.div>
