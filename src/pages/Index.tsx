@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ChevronDown, Instagram, Youtube } from "lucide-react"; 
 import sectionWork from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
 import sectionAbout from "@/assets/SnapInsta.to_572603706_17856753330542776_675896164524725598_n.jpg";
@@ -13,25 +12,10 @@ const fadeUp = {
 } as const;
 
 const Index = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-  
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const videoOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-
   return (
-    <div ref={containerRef} className="relative overflow-x-hidden bg-background">
-      {/* --- HERO VIDEO SECTION --- */}
-      <motion.div 
-        className="fixed inset-0 w-full h-screen overflow-hidden z-0"
-        style={{ 
-          scale: videoScale,
-          opacity: videoOpacity
-        }}
-      >
+    <div className="relative overflow-x-hidden bg-background">
+      {/* --- HERO VIDEO BACKGROUND (FIXED) --- */}
+      <div className="fixed inset-0 w-full h-screen overflow-hidden z-0 pointer-events-none">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src={heroBg}
@@ -41,15 +25,34 @@ const Index = () => {
           playsInline  
         />
         <div className="absolute inset-0 bg-black/40" />
-      </motion.div>
+      </div>
 
-      {/* Hero Scroll Indicator */}
-      <section className="relative h-screen flex items-end justify-center z-10 pb-12 pointer-events-none">
+      {/* Hero Content / Spacer */}
+      <section className="relative h-screen flex flex-col items-center justify-center px-6 pointer-events-none z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="flex flex-col items-center w-full"
+        >
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground tracking-[0.2em] uppercase font-extralight leading-none">
+            Vinden Film
+          </h1>
+          <motion.span 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="font-montserrat text-[9px] md:text-xs uppercase tracking-[0.4em] mt-4 text-foreground"
+          >
+            Audiovisual com intenção
+          </motion.span>
+        </motion.div>
+
         <motion.div 
-          className="flex flex-col items-center gap-2"
+          className="absolute bottom-12 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1, delay: 2 }}
         >
           {/* <span className="text-[10px] uppercase tracking-[0.4em] text-white opacity-60 font-body">
             mais
@@ -59,10 +62,7 @@ const Index = () => {
       </section>
 
       {/* --- CONTENT CONTAINER --- */}
-      <motion.div className="relative z-20 bg-background">
-        {/* EFEITO ESFUMAÇADO (TRANSITION FADE) */}
-        <div className="absolute -top-96 left-0 right-0 h-96 bg-gradient-to-t from-background via-background/70 to-transparent pointer-events-none" />
-        
+      <motion.div className="relative z-20 bg-background shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
         <div className="relative z-10">
           {/* Section 1 - Sobre */}
           <motion.section
@@ -82,7 +82,7 @@ const Index = () => {
                   A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia.
                 </p>
                 <Link to="/sobre" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
-                  → Conheça a Vinden
+                  Conheça a Vinden
                 </Link>
               </div>
               <div className="overflow-hidden order-1 md:order-2 rounded-sm shadow-2xl">

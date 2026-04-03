@@ -12,8 +12,8 @@ const fadeUp = {
 
 const founders = [
   {
-    name: "Lucas Mendes",
-    role: "Diretor Criativo",
+    name: "Gabriel Nunes",
+    role: "Diretor Criativos",
     image: founder1,
     bio: "Com mais de 10 anos de experiência em direção audiovisual, Lucas lidera a visão criativa de cada projeto, garantindo que cada frame comunique com intenção.",
   },
@@ -74,6 +74,7 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[number]; ind
         </p>
       </div>
     </motion.div>
+
   );
 };
 
@@ -83,7 +84,7 @@ const About = () => {
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${aboutHero})` }}
         />
         <div className="absolute inset-0 overlay-dark-heavy" />
@@ -109,20 +110,20 @@ const About = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="py-24 md:py-32 px-6 md:px-12"
+        className="pt-24 md:pt-32 pb-12 px-6 md:px-12"
       >
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8">
             Trabalhamos com artistas e marcas que entendem que estética não é detalhe, mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
           </p>
-          <p className="text-foreground font-display text-2xl md:text-3xl font-light">
-            O que você mostra define o que percebem
+          <p className="text-foreground/80 font-artistic text-xl md:text-4xl italic mt-16 md:mt-24">
+            "O que você mostra define o que percebem"
           </p>
         </div>
       </motion.section>
 
       {/* Founders */}
-      <section className="py-24 md:py-32">
+      <section className="pt-12 pb-24 md:pb-32">
         <motion.h2
           variants={fadeUp}
           initial="hidden"
