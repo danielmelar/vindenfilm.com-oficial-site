@@ -12,7 +12,7 @@ const fadeUp = {
 
 const founders = [
   {
-    name: "Gabriel Nunes",
+    name: "Mateus Fernando",
     role: "Diretor Criativo",
     image: founder1,
     bio: "Lidera a visão criativa de cada projeto, garantindo que cada frame comunique com intenção e estratégia visual única.",
