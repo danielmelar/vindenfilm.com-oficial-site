@@ -79,7 +79,7 @@ const Index = () => {
                 Conheça a Vinden
               </Link>
             </div>
-            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
+            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
               <img src={sectionAbout} alt="Sobre" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -100,7 +100,7 @@ const Index = () => {
                 Ver Trabalhos
               </Link>
             </div>
-            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
+            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
               <img src={sectionWork} alt="Trabalho" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -121,7 +121,7 @@ const Index = () => {
                 Contato
               </Link>
             </div>
-            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
+            <div className="w-full md:w-[65%] aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.9)] bg-background">
               <img src={sectionContact} alt="Contato" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>

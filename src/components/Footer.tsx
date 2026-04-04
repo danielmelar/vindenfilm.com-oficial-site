@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body">
+            <h4 className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body text-primary">
               Navegação
             </h4>
             <div className="flex flex-col gap-2">
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body">
+            <h4 className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body text-primary">
               Contato
             </h4>
             <div className="flex flex-col gap-2 text-sm text-foreground font-body">
