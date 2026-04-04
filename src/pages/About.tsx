@@ -66,7 +66,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="max-w-3xl text-center"
           >
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide mb-8">
+            <h1 className="font-montserrat font-medium text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tight mb-8">
               Sobre a Vinden
             </h1>
             <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">

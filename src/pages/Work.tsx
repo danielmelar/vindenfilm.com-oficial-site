@@ -112,7 +112,7 @@ const Work = () => {
             <span className="text-primary text-xs uppercase tracking-[0.3em] font-body mb-3">
               {project.category}
             </span>
-            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4 uppercase">
               {project.title}
             </h2>
             <p className="text-muted-foreground font-body text-sm md:text-base max-w-lg leading-relaxed mb-6">

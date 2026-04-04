@@ -43,7 +43,7 @@ const Index = () => {
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="flex flex-col items-center w-full"
           >
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground tracking-[0.2em] uppercase font-extralight leading-none">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tighter uppercase font-extralight leading-none">
               Vinden Film
             </h1>
             <motion.span 
