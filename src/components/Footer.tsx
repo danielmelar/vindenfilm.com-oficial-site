@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 px-6 md:px-12">
+    <footer className="border-t border-border py-12 px-6 md:px-12 bg-background relative z-30">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
@@ -42,6 +42,11 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-border text-center">
           <p className="text-muted-foreground text-xs font-body">
             © {new Date().getFullYear()} Vinden Film. Todos os direitos reservados.
+          </p>
+          <p className="text-muted-foreground text-xs font-body">
+            Criado por 
+
+            <Link to="https://danielmelar.com" className="transition-colors"> Daniel Aguilar</Link>
           </p>
         </div>
       </div>

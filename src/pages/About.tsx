@@ -12,181 +12,136 @@ const fadeUp = {
 
 const founders = [
   {
-    name: "Lucas Mendes",
+    name: "Gabriel Nunes",
     role: "Diretor Criativo",
     image: founder1,
-    bio: "Com mais de 10 anos de experiência em direção audiovisual, Lucas lidera a visão criativa de cada projeto, garantindo que cada frame comunique com intenção.",
+    bio: "Lidera a visão criativa de cada projeto, garantindo que cada frame comunique com intenção e estratégia visual única.",
   },
   {
     name: "Rafael Torres",
     role: "Diretor de Fotografia",
     image: founder2,
-    bio: "Especialista em captação e iluminação cinematográfica, Rafael transforma conceitos em imagens que transcendem o convencional.",
+    bio: "Especialista em iluminação cinematográfica, transforma conceitos em imagens que transcendem o convencional.",
   },
   {
     name: "André Costa",
-    role: "Colorista & Pós-Produção",
+    role: "Pós-Produção",
     image: founder3,
-    bio: "Responsável pelo color grading e finalização, André dá a cada projeto a identidade visual que o diferencia no mercado.",
+    bio: "Responsável pelo color grading, dá a cada projeto a identidade visual que o diferencia no mercado.",
   },
 ];
 
-const FounderCard = ({ founder, index }: { founder: typeof founders[number]; index: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1.05, 0.95]);
-  const isReversed = index % 2 !== 0;
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className={`flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} items-center min-h-[70vh] relative overflow-hidden`}
-    >
-      {/* Image with parallax */}
-      <div className="w-full md:w-1/2 flex items-end justify-center relative h-[65vh] md:h-[80vh]">
-        <motion.img
-          src={founder.image}
-          alt={founder.name}
-          style={{ y, scale }}
-          className="h-[90%] w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Text */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 md:py-0">
-        <span className="text-primary text-xs uppercase tracking-[0.3em] font-body mb-3">
-          {founder.role}
-        </span>
-        <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-foreground mb-6">
-          {founder.name}
-        </h3>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body max-w-md">
-          {founder.bio}
-        </p>
-      </div>
-    </motion.div>
-  );
-};
-
 const About = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Escurece o fundo conforme o scroll avança, começando mais escuro (0.6)
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.6, 0.85, 0.95]);
+
   return (
-    <div className="bg-background">
-      {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div ref={containerRef} className="relative min-h-screen bg-background">
+      {/* FIXED GLOBAL BACKGROUND */}
+      <div className="fixed inset-0 w-full h-screen z-0 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${aboutHero})` }}
         />
-        <div className="absolute inset-0 overlay-dark-heavy" />
+        {/* Dynamic Overlay that darkens on scroll */}
+        <motion.div 
+          style={{ opacity: bgOpacity }}
+          className="absolute inset-0 bg-black z-10" 
+        />
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative z-10 max-w-3xl text-center px-6"
-        >
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide mb-8">
-            Sobre a Vinden
-          </h1>
-          <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            A Vinden Film não existe para produzir conteúdo. Existe para construir imagens com intenção.
-            Acreditamos que sua imagem define até onde você chega — cada enquadramento, movimento e cor 
-            comunica algo, ou denuncia uma falta de rigor.
-          </p>
-        </motion.div>
-      </section>
+      {/* CONTENT SCROLLING OVER BACKGROUND */}
+      <div className="relative z-10">
+        {/* Hero Spacer - Full Screen */}
+        <section className="h-screen flex items-center justify-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="max-w-3xl text-center"
+          >
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-wide mb-8">
+              Sobre a Vinden
+            </h1>
+            <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+              A Vinden existe para construir imagem com intenção. Unindo estratégia, identidade e execução em cada projeto para construir presença real.
+            </p>
+          </motion.div>
+        </section>
 
-      {/* About text */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-24 md:py-32 px-6 md:px-12"
-      >
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-foreground font-body text-base md:text-lg leading-relaxed mb-8">
-            Nosso trabalho integra direção, captação e color grading como um único processo.
-          </p>
-          <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8">
-            Trabalhamos com marcas, artistas e líderes que entendem que estética não é detalhe, 
-            mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
-          </p>
-          <p className="text-foreground font-display text-2xl md:text-3xl font-light italic">
-            A Vinden não busca volume.<br />
-            Busca projetos que exigem mais do que execução.
-          </p>
-        </div>
-      </motion.section>
-
-      {/* Founders */}
-
-      {/* Como no figma */}
-      {/* <section className="py-24 md:py-32">
-        <motion.h2
+        {/* Mission Section - Transparent */}
+        <motion.section
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="font-display text-3xl md:text-5xl font-light text-center text-foreground mb-20 px-6"
+          viewport={{ once: true, amount: 0.3 }}
+          className="py-32 md:py-48 px-6 md:px-12 flex items-center justify-center"
         >
-          Quem faz a Vinden
-        </motion.h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+              Trabalhamos com artistas e marcas que entendem que estética não é detalhe, mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
+            </p>
+            <p className="text-foreground/80 font-artistic text-xl md:text-4xl italic mt-16 md:mt-24">
+              "O que você mostra define o que percebem"
+            </p>
+          </div>
+        </motion.section>
 
-        <div className="space-y-24 md:space-y-0">
-          {founders.map((founder, i) => (
-            <FounderCard key={founder.name} founder={founder} index={i} />
-          ))}
-        </div>
-      </section> */}
+        {/* Founders Section */}
+        <section className="py-24 md:py-32">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="font-display text-3xl md:text-5xl font-light text-center text-foreground mb-24 px-6"
+          >
+            Fundadores
+          </motion.h2>
 
+          <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6">
+            {founders.map((founder, i) => (
+              <motion.div
+                key={founder.name}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+                >
+                <div className={`w-full md:w-1/2 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl relative`}>
+                  <img 
+                    src={founder.image} 
+                    alt={founder.name}
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                
+                <div className={`flex flex-col gap-4 md:w-1/2 ${i % 2 !== 0 ? "md:text-right md:items-end" : "md:text-left md:items-start"}`}>
+                  <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-body">
+                    {founder.role}
+                  </span>
+                  <h3 className="font-display text-3xl md:text-5xl font-light text-foreground">
+                    {founder.name}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-md">
+                    {founder.bio}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-        {/* Com uma pequena foto */}
-       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          {founders.map((founder, i) => (
-            <motion.div
-              key={founder.name}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="flex flex-col items-center text-center"
-            >
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 border border-border">
-                <img
-                  src={founder.image}
-                  alt={founder.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <h3 className="font-display text-2xl font-light text-foreground mb-1">
-                {founder.name}
-              </h3>
-              <span className="text-primary text-xs uppercase tracking-[0.2em] font-body mb-4">
-                {founder.role}
-              </span>
-              <p className="text-muted-foreground text-sm leading-relaxed font-body max-w-xs">
-                {founder.bio}
-              </p>
-            </motion.div>
-          ))}
-
-          <br></br>
-          <br></br>
-        </div>
-
-
+        {/* Final Spacer */}
+        <div className="h-[30vh]" />
+      </div>
     </div>
   );
 };

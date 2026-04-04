@@ -14,8 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
-        body: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['Bodoni FLF', 'serif'],
+        body: ['Montserrat', 'system-ui', 'sans-serif'],
+        artistic: ['Safina March', 'cursive'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        bodoni: ['Bodoni FLF', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
