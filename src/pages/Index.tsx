@@ -122,7 +122,7 @@ const Index = () => {
                 Conheça a Vinden
               </Link>
             </div>
-            <ParallaxImage src={sectionAbout} alt="Sobre" angle={-3} />
+            <ParallaxImage src={sectionAbout} alt="Sobre" angle={0} />
           </div>
         </motion.section>
 
@@ -147,7 +147,7 @@ const Index = () => {
                 Ver Trabalhos
               </Link>
             </div>
-            <ParallaxImage src={sectionWork} alt="Trabalho" angle={3} />
+            <ParallaxImage src={sectionWork} alt="Trabalho" angle={0} />
           </div>
         </motion.section>
 
@@ -172,7 +172,7 @@ const Index = () => {
                 Contato
               </Link>
             </div>
-            <ParallaxImage src={sectionContact} alt="Contato" angle={-3} />
+            <ParallaxImage src={sectionContact} alt="Contato" angle={0} />
           </div>
         </motion.section>
 

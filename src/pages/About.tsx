@@ -31,27 +31,6 @@ const founders = [
   },
 ];
 
-const ParallaxFounderImage = ({ src, alt }: { src: string, alt: string }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [-30, 30]);
-
-  return (
-    <div ref={ref} className="w-full md:w-1/2 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl relative">
-      <motion.img 
-        src={src} 
-        alt={alt} 
-        style={{ y }}
-        className="w-full h-[120%] object-cover absolute top-[-10%]" 
-      />
-    </div>
-  );
-};
-
 const About = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -135,8 +114,14 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-              >
-                <ParallaxFounderImage src={founder.image} alt={founder.name} />
+                >
+                <div className={`w-full md:w-1/2 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl relative`}>
+                  <img 
+                    src={founder.image} 
+                    alt={founder.name}
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
                 
                 <div className={`flex flex-col gap-4 md:w-1/2 ${i % 2 !== 0 ? "md:text-right md:items-end" : "md:text-left md:items-start"}`}>
                   <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-body">
