@@ -70,13 +70,13 @@ const projects = [
     video: work4,
   },
   {
-    title: "Luzes da Cidade",
+    title: "Fiel é Deus | Short Version (Cover)",
     category: "Videoclipe",
     description:
-      "Direção e produção de videoclipe musical com estética urbana noturna, explorando o contraste entre luz artificial e escuridão.",
-    image: work2,
-    link: "#",
-    video: "https://www.youtube.com/embed/ErwS24cBZPc"
+      "Clipe Sillas e Debora.",
+    image: work1,
+    link: "",
+    video: "https://www.youtube.com/embed/M7moEr76auY"
   },
   {
     title: "Noir Editorial",

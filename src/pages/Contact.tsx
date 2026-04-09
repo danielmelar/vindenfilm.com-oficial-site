@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import contactBg from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
+import contactBg from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-contato.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -35,11 +35,11 @@ const Contact = () => {
             <div className="flex flex-col gap-4 md:gap-5">
               <a href="mailto:contato@vindenfilm.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-body text-sm">
                 <Mail size={18} className="text-primary" />
-                contato@vindenfilm.com
+                vindenfilm@gmail.com
               </a>
-              <a href="tel:+5511999999999" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-body text-sm">
+              <a href="tel:+55119963171341" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-body text-sm">
                 <Phone size={18} className="text-primary" />
-                +55 (11) 99999-9999
+                +55 (11) 996317-1341
               </a>
               <div className="flex items-center gap-3 text-foreground font-body text-sm">
                 <MapPin size={18} className="text-primary" />
@@ -48,12 +48,12 @@ const Contact = () => {
             </div>
 
             <div className="flex gap-5">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/vindenfilm" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram size={22} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube">
+              {/* <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube">
                 <Youtube size={22} />
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import aboutHero from "@/assets/SnapInsta.to_610137273_17865722793542776_2806416153630550121_n.jpg";
-import founder1 from "@/assets/founder-1.jpg";
-import founder2 from "@/assets/founder-2.jpg";
-import founder3 from "@/assets/founder-3.jpg";
+import aboutHero from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-sobre.jpg";
+import paulo from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/paulo.png";
+import nunes from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/nunes.png";
+import aguiar from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/aguiar.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -12,22 +12,22 @@ const fadeUp = {
 
 const founders = [
   {
-    name: "Mateus Fernando",
-    role: "Diretor Criativo",
-    image: founder1,
-    bio: "Lidera a visão criativa de cada projeto, garantindo que cada frame comunique com intenção e estratégia visual única.",
+    name: "Paulo Henrique",
+    role: "CEO",
+    image: paulo,
+    bio: "É quem define a visão e direciona o caminho criativo da Vinden. Atua na construção do posicionamento da empresa, garantindo coerência estética e intencionalidade em cada projeto. Na Vinden, Paulo lidera a visão estratégica e contribui com o olhar artístico, assegurando que cada entrega reflita identidade, sensibilidade e excelência visual.",
   },
   {
-    name: "Rafael Torres",
+    name: "Gabriel Nunes",
+    role: "Editor Chefe",
+    image: nunes,
+    bio: "É quem faz a ponte entre o set e a edição, mantendo a intenção do projeto até a entrega final. Na Vinden, Gabriel atua na direção interna dos projetos e na pós-produção, com foco em motion design e SFX, trazendo personalidade, movimento e intensão para cada entrega.",
+  },
+  {
+    name: "Gabriel Aguiar",
     role: "Diretor de Fotografia",
-    image: founder2,
-    bio: "Especialista em iluminação cinematográfica, transforma conceitos em imagens que transcendem o convencional.",
-  },
-  {
-    name: "André Costa",
-    role: "Pós-Produção",
-    image: founder3,
-    bio: "Responsável pelo color grading, dá a cada projeto a identidade visual que o diferencia no mercado.",
+    image: aguiar,
+    bio: "É quem compõe o quadro e dá vida à atmosfera do projeto, garantindo que a luz, a arte e a câmera conversem em perfeita harmonia. Na Vinden, atua no comando da captação visual e da direção de arte, sendo o responsável por registrar a narrativa com excelência técnica e um olhar artístico refinado.",
   },
 ];
 
@@ -85,10 +85,20 @@ const About = () => {
         >
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-              Trabalhamos com artistas e marcas que entendem que estética não é detalhe, mas sim estratégia. Se o objetivo é apenas "ter um vídeo", provavelmente não somos a escolha certa.
+              Cada projeto começa na definição de direção, narrativa e posicionamento, porque não é o volume que constrói relevância, mas a clareza de como um artista é percebido. Por isso, não trabalhamos para produzir mais, mas para construir presença, unindo estratégia, identidade e execução em cada projeto.
+            </p>
+            <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+              Antes de qualquer câmera ligada, existe um processo de entender quem é o artista, o que ele comunica hoje e o que quer que comuniquem sobre ele amanhã. Esse intervalo entre o que é e o que precisa ser percebido, é onde o trabalho da Vinden começa de verdade.
             </p>
             <p className="text-foreground/80 font-artistic text-xl md:text-4xl italic mt-16 md:mt-24">
               "O que você mostra define o que percebem"
+            </p>
+            <br>
+            </br>
+            <br>
+            </br>
+            <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+              Trabalhamos com quem entende que ser consistente é diferente de aparecer com frequência. Nossos clientes sabem que cada projeto precisa deixar uma marca e construir reconhecimento, sabem que devem fazer com que a próxima pessoa que chegar ao perfil ou assistir a um vídeo entenda imediatamente o que você representa
             </p>
           </div>
         </motion.section>

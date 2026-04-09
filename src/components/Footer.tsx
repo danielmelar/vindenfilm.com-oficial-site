@@ -32,8 +32,8 @@ const Footer = () => {
               Contato
             </h4>
             <div className="flex flex-col gap-2 text-sm text-foreground font-body">
-              <span>contato@vindenfilm.com</span>
-              <span>+55 (11) 99999-9999</span>
+              <span>vindenfilm.com</span>
+              <span>+55 (11) 996317-1341</span>
               <span>São Paulo, Brasil</span>
             </div>
           </div>

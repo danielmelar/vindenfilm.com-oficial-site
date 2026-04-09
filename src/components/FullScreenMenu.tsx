@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import menuBg from "@/assets/SnapInsta.to_611637410_17865722805542776_7555008414492635363_n.jpg";
+import menuBg from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-menu.jpg";
 
 interface FullScreenMenuProps {
   isOpen: boolean;

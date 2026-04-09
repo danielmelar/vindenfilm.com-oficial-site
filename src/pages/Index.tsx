@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroBg from "@/assets/hero.mp4";
-import sectionWork from "@/assets/SnapInsta.to_572040055_17856753357542776_7744339720567314343_n.jpg";
-import sectionAbout from "@/assets/SnapInsta.to_572603706_17856753330542776_675896164524725598_n.jpg";
-import sectionContact from "@/assets/SnapInsta.to_612548780_17865722814542776_7133087245881705495_n.jpg";
+import heroBg from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/hero/hero-video.mp4";
+import sectionWork from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-secao-trabalho1.png";
+import sectionAbout from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-secao-sobre.jpg";
+import sectionContact from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-secao-contato.jpeg";
 
 const Index = () => {
   const containerRef = useRef(null);
@@ -73,7 +73,7 @@ const Index = () => {
                 <span className="text-gradient-gold">Construímos imagem.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
-                A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia.
+                A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia. Não buscamos volume. Buscamos projetos que exigem mais do que apenas execução.
               </p>
               <Link to="/sobre" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                 Conheça a Vinden
@@ -94,7 +94,7 @@ const Index = () => {
                 <span className="text-gradient-gold">intenção.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
-                Cada escolha visual comunica algo. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo.
+                Cada escolha visual comunica algo, ou expõe a falta de direção. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo. O resultado são narrativas visuais que constroem percepção e consolidam o posicionamento de cada projeto.
               </p>
               <Link to="/trabalhos" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                 Ver Trabalhos
@@ -115,7 +115,7 @@ const Index = () => {
                 <span className="text-gradient-gold">seu projeto.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
-                Se você busca uma produção audiovisual estratégica, entre em contato conosco para construir algo memorável.
+               Se você busca uma produção audiovisual que vai além da execução técnica, que entende o poder da imagem como ferramenta estratégica, entre em contato. Queremos ouvir sobre o seu projeto.
               </p>
               <Link to="/contato" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-all duration-300 text-sm uppercase tracking-[0.2em] font-body mt-2 w-fit border-b border-primary/30 hover:border-foreground pb-1">
                 Contato
