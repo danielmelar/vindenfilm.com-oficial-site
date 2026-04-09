@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import aboutHero from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fotos/foto-sobre.jpg";
-import paulo from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/paulo.png";
-import nunes from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/nunes.png";
-import aguiar from "C:/Users/Daniel/Desktop/vindenfilm.com/midias/midias-oficiais/fundadores/aguiar.jpeg";
+import aboutHero from "@/assets/midias-oficiais/fotos/foto-sobre.jpg";
+import paulo from "@/assets/midias-oficiais/fundadores/paulo.png";
+import nunes from "@/assets/midias-oficiais/fundadores/nunes.png";
+import aguiar from "@/assets/midias-oficiais/fundadores/aguiar.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
