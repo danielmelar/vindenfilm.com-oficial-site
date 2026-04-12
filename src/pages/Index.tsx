@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroBg from "https://assets.vindenfilm.com/hero/hero-video.mp4";
-import sectionWork from "https://assets.vindenfilm.com/fotos/foto-secao-trabalho1.png";
-import sectionAbout from "https://assets.vindenfilm.com/fotos/foto-secao-sobre.jpg";
-import sectionContact from "https://assets.vindenfilm.com/fotos/foto-secao-contato.jpeg";
+import sectionWork from "@/assets/midias-oficiais/fotos/foto-secao-trabalho1.png";
+import sectionAbout from "@/assets/midias-oficiais/fotos/foto-secao-sobre.jpg";
+import sectionContact from "@/assets/midias-oficiais/fotos/foto-secao-contato.jpeg";
 
 const Index = () => {
   const containerRef = useRef(null);
@@ -17,16 +16,15 @@ const Index = () => {
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-background">
-      {/* --- FIXED VIDEO BACKGROUND --- */}
+      {/* --- FIXED VIDEO BACKGROUND (YOUTUBE) --- */}
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0 pointer-events-none">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src={heroBg}
-          autoPlay
-          loop
-          muted
-          playsInline  
-        />
+        <iframe
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115vw] h-[115vh] object-cover scale-110 pointer-events-none"
+          src="https://www.youtube.com/embed/9PaW0Zs93Uk?autoplay=1&mute=1&loop=1&playlist=9PaW0Zs93Uk&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
+          title="Background Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
         <motion.div 
           style={{ opacity: bgOpacity }}
           className="absolute inset-0 bg-black z-10" 
