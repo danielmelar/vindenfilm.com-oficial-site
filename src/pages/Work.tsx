@@ -51,23 +51,23 @@ const ParallaxProjectMedia = ({ video, image }: { video: string, image: string }
 };
 
 const projects = [
+  // {
+  //   title: "Horizonte Dourado",
+  //   category: "Filme Institucional",
+  //   description:
+  //     "Documentário visual para uma marca de luxo, capturando a essência da excelência artesanal em paisagens cinematográficas.",
+  //   image: "",
+  //   link: "https://www.instagram.com/sillasmicael",
+  //   video: "https://www.youtube.com/embed/TU-a3ntzSAA",
+  // },
   {
-    title: "Horizonte Dourado",
-    category: "Filme Institucional",
+    title: "Sillas Micael",
+    category: "Artista Gospel",
     description:
-      "Documentário visual para uma marca de luxo, capturando a essência da excelência artesanal em paisagens cinematográficas.",
+      "Construção de imagem e posicionamento visual do artista, comunicando com intenção a identidade de um ministro de louvor.",
     image: "",
-    link: "#",
-    video: "https://www.youtube.com/embed/TU-a3ntzSAA",
-  },
-  {
-    title: "Clipe Sillas Micael",
-    category: "Clipe Musical",
-    description:
-      "Documentário visual para uma marca de luxo, capturando a essência da excelência artesanal em paisagens cinematográficas.",
-    image: "",
-    link: "#",
-    video: "",
+    link: "https://www.instagram.com/sillasmicael",
+    video: "https://www.youtube.com/embed/eU6QeLT5AEw",
   },
   {
     title: "Fiel é Deus | Short Version (Cover)",
@@ -75,17 +75,17 @@ const projects = [
     description:
       "Clipe Sillas e Debora.",
     image: "",
-    link: "",
+    link: "https://youtube.com/watch?v=M7moEr76auY&source_ve_path=MTc4NDI0",
     video: "https://www.youtube.com/embed/M7moEr76auY"
   },
   {
-    title: "Noir Editorial",
-    category: "Fashion Film",
+    title: "Atelier Josefa Melo",
+    category: "Curta Cinematrográfico",
     description:
-      "Fashion film para marca de alta costura, onde a iluminação e o color grading criam uma atmosfera de elegância intemporal.",
+      "Documentário Visual para Atelier Josefa Melo, transmitindo a essência e excelência da alta costura do atelier.",
     image: "",
-    link: "#",
-    video: "https://www.youtube.com/embed/eQ3-UA65Eok"
+    link: "https://atelierjosefamelo.com.br",
+    video: "https://www.youtube.com/embed/hUop00ovE2Q"
   },
 ];
 
