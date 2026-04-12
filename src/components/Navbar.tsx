@@ -20,7 +20,11 @@ const Navbar = () => {
         
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link to="/">
-            <img src={logo} alt="Vinden Film" className="w-24 md:w-32 lg:w-40" />
+            <img 
+              src={logo} 
+              alt="Vinden Film" 
+              className="w-24 md:w-32 lg:w-40 brightness-0 invert" 
+            />
           </Link>
         </div>
       </nav>
