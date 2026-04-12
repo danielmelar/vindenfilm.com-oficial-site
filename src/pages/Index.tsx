@@ -37,25 +37,6 @@ const Index = () => {
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="relative h-screen flex flex-col items-center justify-center px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="flex flex-col items-center w-full"
-          >
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tighter uppercase font-extralight leading-none">
-              Vinden Film
-            </h1>
-            <motion.span 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="font-montserrat text-[9px] md:text-xs uppercase tracking-[0.4em] mt-4 text-foreground"
-            >
-              Audiovisual com intenção
-            </motion.span>
-          </motion.div>
-
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
             <span className="text-[8px] uppercase tracking-[0.4em] text-white opacity-40 font-body">
               Role para explorar

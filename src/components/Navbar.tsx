@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import FullScreenMenu from "./FullScreenMenu";
+import { Link } from "react-router-dom";
+import logo from "@/assets/VINDEN-VETORIZADA.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,9 +17,12 @@ const Navbar = () => {
         >
           <Menu size={28} strokeWidth={1.5} />
         </button>
-        {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <img src={logo} alt="Vinden Film" className="w-40" />
-        </div> */}
+        
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link to="/">
+            <img src={logo} alt="Vinden Film" className="w-24 md:w-32 lg:w-40" />
+          </Link>
+        </div>
       </nav>
 
       <FullScreenMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
