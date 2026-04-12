@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import aboutHero from "https://assets.vindenfilm.com/fotos/foto-sobre.jpg";
-import paulo from "https://assets.vindenfilm.com/fundadores/paulo.png";
+import paulo from "https://assets.vindenfilm.com/fundadores/paulo.jpg";
 import nunes from "https://assets.vindenfilm.com/fundadores/nunes.png";
 import aguiar from "https://assets.vindenfilm.com/fundadores/aguiar.jpeg";
 
