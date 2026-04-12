@@ -20,7 +20,7 @@ const Index = () => {
       {/* --- FIXED VIDEO BACKGROUND (YOUTUBE) --- */}
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0 pointer-events-none">
         <iframe
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115vw] h-[115vh] object-cover scale-110 pointer-events-none"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full pointer-events-none scale-105"
           src="https://www.youtube.com/embed/9PaW0Zs93Uk?autoplay=1&mute=1&loop=1&playlist=9PaW0Zs93Uk&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
           title="Background Video"
           frameBorder="0"

@@ -23,7 +23,7 @@ const ParallaxProjectMedia = ({ video, image }: { video: string, image: string }
       <motion.div style={{ y }} className="absolute inset-0 h-[120%] top-[-10%]">
         {isYoutubeUrl(video) ? (
           <iframe 
-            className="w-full h-full object-cover pointer-events-none scale-110"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[192vh] min-w-full h-[56.25vw] min-h-full pointer-events-none scale-110"
             src={`${video}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&playlist=${video.split('/').pop()}`}
             title="Project Video"
             frameBorder="0"
