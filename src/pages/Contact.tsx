@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import contactBg from "@/assets/midias-oficiais/fotos/foto-contato.jpg";
+import contactBg from "https://assets.vindenfilm.com/fotos/foto-contato.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });

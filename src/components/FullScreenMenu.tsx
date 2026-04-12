@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import menuBg from "@/assets/midias-oficiais/fotos/foto-menu.jpg";
+import menuBg from "https://assets.vindenfilm.com/fotos/foto-menu.jpg";
 
 interface FullScreenMenuProps {
   isOpen: boolean;

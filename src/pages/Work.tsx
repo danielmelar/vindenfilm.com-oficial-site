@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import work1 from "@/assets/work-1.jpg";
-import work2 from "@/assets/work-2.jpg";
-import work3 from "@/assets/work-3.jpg";
-import work4 from "@/assets/hero.mp4";
+// import work1 from "@/assets/work-1.jpg";
+// import work2 from "@/assets/work-2.jpg";
+// import work3 from "@/assets/work-3.jpg";
+// import work4 from "@/assets/hero.mp4";
 
 const isYoutubeUrl = (url: string) => url.includes("youtube.com");
 const isVideoFile = (url: string) => url.endsWith(".mp4") || url.endsWith(".webm");
@@ -56,7 +56,7 @@ const projects = [
     category: "Filme Institucional",
     description:
       "Documentário visual para uma marca de luxo, capturando a essência da excelência artesanal em paisagens cinematográficas.",
-    image: work1,
+    image: "",
     link: "#",
     video: "https://www.youtube.com/embed/TU-a3ntzSAA",
   },
@@ -67,14 +67,14 @@ const projects = [
       "Documentário visual para uma marca de luxo, capturando a essência da excelência artesanal em paisagens cinematográficas.",
     image: "",
     link: "#",
-    video: work4,
+    video: "",
   },
   {
     title: "Fiel é Deus | Short Version (Cover)",
     category: "Videoclipe",
     description:
       "Clipe Sillas e Debora.",
-    image: work1,
+    image: "",
     link: "",
     video: "https://www.youtube.com/embed/M7moEr76auY"
   },
@@ -83,7 +83,7 @@ const projects = [
     category: "Fashion Film",
     description:
       "Fashion film para marca de alta costura, onde a iluminação e o color grading criam uma atmosfera de elegância intemporal.",
-    image: work3,
+    image: "",
     link: "#",
     video: "https://www.youtube.com/embed/eQ3-UA65Eok"
   },

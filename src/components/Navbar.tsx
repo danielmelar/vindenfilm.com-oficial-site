@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import FullScreenMenu from "./FullScreenMenu";
 import { Link } from "react-router-dom";
-import logo from "@/assets/VINDEN-VETORIZADA.svg";
+import logo from "@/assets/logo/logo-vetorizada.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

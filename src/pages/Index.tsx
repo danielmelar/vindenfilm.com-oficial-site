@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroBg from "@/assets/midias-oficiais/hero/hero-video.mp4";
-import sectionWork from "@/assets/midias-oficiais/fotos/foto-secao-trabalho1.png";
-import sectionAbout from "@/assets/midias-oficiais/fotos/foto-secao-sobre.jpg";
-import sectionContact from "@/assets/midias-oficiais/fotos/foto-secao-contato.jpeg";
+import heroBg from "https://assets.vindenfilm.com/hero/hero-video.mp4";
+import sectionWork from "https://assets.vindenfilm.com/fotos/foto-secao-trabalho1.png";
+import sectionAbout from "https://assets.vindenfilm.com/fotos/foto-secao-sobre.jpg";
+import sectionContact from "https://assets.vindenfilm.com/fotos/foto-secao-contato.jpeg";
 
 const Index = () => {
   const containerRef = useRef(null);
