@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bodoni FLF', 'serif'],
+        display: ['Apple Garamond', 'serif'],
         body: ['Montserrat', 'system-ui', 'sans-serif'],
-        artistic: ['Safina March', 'cursive'],
+        artistic: ['Apple Garamond', 'serif'],
         montserrat: ['Montserrat', 'sans-serif'],
-        bodoni: ['Bodoni FLF', 'serif'],
+        garamond: ['Apple Garamond', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

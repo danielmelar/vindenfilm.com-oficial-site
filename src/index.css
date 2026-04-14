@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/font/apple_garamond/AppleGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/font/apple_garamond/AppleGaramond-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/font/apple_garamond/AppleGaramond.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/font/apple_garamond/AppleGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/font/apple_garamond/AppleGaramond-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,9 +80,9 @@
     --sidebar-border: 0 0% 18%;
     --sidebar-ring: 221 36% 36%;
 
-    --font-display: 'Bodoni FLF', serif;
+    --font-display: 'Apple Garamond', serif;
     --font-body: 'Montserrat', system-ui, sans-serif;
-    --font-artistic: 'Bodoni FLF', serif;
+    --font-artistic: 'Apple Garamond', serif;
   }
 }
 
@@ -74,7 +109,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
     letter-spacing: -0.02em;
     -webkit-font-smoothing: antialiased;

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="font-display text-2xl font-light text-foreground mb-4">
+            <h3 className="font-display italic text-2xl font-light text-foreground mb-4">
               Vinden Film
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed font-body">

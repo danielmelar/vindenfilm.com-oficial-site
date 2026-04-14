@@ -67,16 +67,16 @@ const projects = [
       "Construção de imagem e posicionamento visual do artista, comunicando com intenção a identidade de um ministro de louvor.",
     image: "",
     link: "https://www.instagram.com/sillasmicael",
-    video: "https://www.youtube.com/embed/eU6QeLT5AEw",
+    video: "https://www.youtube.com/embed/uPed5IP89lc",
   },
   {
-    title: "Fiel é Deus | Short Version (Cover)",
-    category: "Videoclipe",
+    title: "Short Versions",
+    category: "Clipes Musicais",
     description:
-      "Clipe Sillas e Debora.",
+      "Clipes de músicas populares gospel para Sillas Micael e Débora Buzas, onde cor e atmosfera foram tratadas como extensão da mensagem de cada faixa.",
     image: "",
-    link: "https://youtube.com/watch?v=M7moEr76auY&source_ve_path=MTc4NDI0",
-    video: "https://www.youtube.com/embed/M7moEr76auY"
+    link: "https://www.youtube.com/watch?v=JT2H2MUss48",
+    video: "https://www.youtube.com/embed/hCotUgHAvk4"
   },
   {
     title: "Atelier Josefa Melo",
@@ -112,7 +112,7 @@ const Work = () => {
             <span className="text-primary text-xs uppercase tracking-[0.3em] font-body mb-3">
               {project.category}
             </span>
-            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4 uppercase">
+            <h2 className="font-display italic text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4 uppercase">
               {project.title}
             </h2>
             <p className="text-muted-foreground font-body text-sm md:text-base max-w-lg leading-relaxed mb-6">

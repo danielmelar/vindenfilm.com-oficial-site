@@ -48,7 +48,7 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-6 md:w-[45%]">
-              <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+              <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
                 Não produzimos conteúdo.<br />
                 <span className="text-gradient-gold">Construímos imagem.</span>
               </h2>
@@ -69,7 +69,7 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-6 md:w-[45%]">
-              <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+              <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
                 Imagens com<br />
                 <span className="text-gradient-gold">intenção.</span>
               </h2>
@@ -90,7 +90,7 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-6 md:w-[45%]">
-              <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+              <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
                 Vamos conversar sobre<br />
                 <span className="text-gradient-gold">seu projeto.</span>
               </h2>
