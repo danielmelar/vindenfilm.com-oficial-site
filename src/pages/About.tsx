@@ -109,7 +109,7 @@ const About = () => {
               </div>
 
               <div className="py-8 md:py-12">
-                <p className="text-foreground/80 font-artistic text-xl md:text-4xl italic">
+                <p className="text-foreground/80 font-artistic text-xl md:text-4xl font-light italic">
                   "O que você mostra define o que percebem"
                 </p>
               </div>
