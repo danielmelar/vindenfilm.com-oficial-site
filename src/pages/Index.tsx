@@ -49,8 +49,8 @@ const Index = () => {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-6 md:w-[45%]">
               <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
-                Não produzimos conteúdo.<br />
-                <span className="text-gradient-gold">Construímos imagem.</span>
+                Não produzimos conteúdo<br />
+                <span className="text-gradient-gold">Construímos imagem</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
                 A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia. Não buscamos volume. Buscamos projetos que exigem mais do que apenas execução.
@@ -71,7 +71,7 @@ const Index = () => {
             <div className="flex flex-col gap-6 md:w-[45%]">
               <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
                 Imagens com<br />
-                <span className="text-gradient-gold">intenção.</span>
+                <span className="text-gradient-gold">intenção</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
                 Cada escolha visual comunica algo, ou expõe a falta de direção. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo. O resultado são narrativas visuais que constroem percepção e consolidam o posicionamento de cada projeto.
@@ -92,7 +92,7 @@ const Index = () => {
             <div className="flex flex-col gap-6 md:w-[45%]">
               <h2 className="font-display italic text-3xl md:text-5xl font-light text-foreground leading-tight">
                 Vamos conversar sobre<br />
-                <span className="text-gradient-gold">seu projeto.</span>
+                <span className="text-gradient-gold">seu projeto</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-lg">
                Se você busca uma produção audiovisual que vai além da execução técnica, que entende o poder da imagem como ferramenta estratégica, entre em contato. Queremos ouvir sobre o seu projeto.

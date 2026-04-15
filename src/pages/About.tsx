@@ -79,7 +79,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="max-w-3xl text-center"
           >
-            <h1 className="font-display italic font-light text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tight mb-8">
+            <h1 className="font-display italic font-light text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tight mb-8 uppercase">
               Sobre a Vinden
             </h1>
             <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
@@ -129,12 +129,12 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display italic text-3xl md:text-5xl font-light text-center text-foreground mb-24 px-6"
+              className="font-display italic text-3xl md:text-5xl font-light text-center text-foreground mb-24 px-6 uppercase"
             >
               Fundadores
             </motion.h2>
 
-            <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6">
+            <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6 uppercase">
               {founders.map((founder, i) => (
                 <motion.div
                   key={founder.name}
