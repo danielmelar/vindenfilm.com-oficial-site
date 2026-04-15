@@ -159,7 +159,7 @@ const About = () => {
                     <h3 className="font-display italic text-3xl md:text-5xl font-light text-foreground">
                       {founder.name}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-md">
+                    <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-md lowercase">
                       {founder.bio}
                     </p>
                   </div>
