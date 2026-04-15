@@ -1,17 +1,50 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { toast } from "sonner";
 
 const contactBg = "https://assets.vindenfilm.com/fotos/foto-contato.jpg";
 
+var accessKey = import.meta.env.VITE_ACCESS_KEY_WEB3FORMS;
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder - can be connected to backend
-    alert("Mensagem enviada! Entraremos em contato em breve.");
-    setForm({ name: "", email: "", message: "" });
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      toast.error("Por favor, preencha todos os campos");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          "access_key": accessKey,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Mensagem enviada! Entraremos em contato em breve.");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Erro ao enviar. Tente novamente.");
+      }
+    } catch {
+      toast.error("Algo deu errado...");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,6 +104,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full bg-secondary/50 border border-border text-foreground font-body text-sm px-4 py-3 focus:outline-none focus:border-primary transition-colors"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -84,6 +118,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full bg-secondary/50 border border-border text-foreground font-body text-sm px-4 py-3 focus:outline-none focus:border-primary transition-colors"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -97,13 +132,15 @@ const Contact = () => {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full bg-secondary/50 border border-border text-foreground font-body text-sm px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none"
+                disabled={isSubmitting}
               />
             </div>
             <button
               type="submit"
               className="mt-2 bg-primary text-primary-foreground font-body text-sm uppercase tracking-[0.2em] px-8 py-3 hover:bg-primary/80 transition-colors"
+              disabled={isSubmitting}
             >
-              Enviar
+              {isSubmitting ? "Enviando..." : "Enviar"}
             </button>
           </form>
         </motion.div>
