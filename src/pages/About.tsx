@@ -79,10 +79,10 @@ const About = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="max-w-3xl text-center"
           >
-            <h1 className="font-display italic font-light text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tight mb-8 uppercase">
+            <h1 className="font-display italic text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 tracking-[-0.05em] [transform:skewX(-15deg)]">
               Sobre a Vinden
             </h1>
-            <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+            <p className="text-muted-foreground font-body text-base md:text-base leading-relaxed max-w-2xl mx-auto">
               A Vinden existe para construir imagem com intenção. Unindo estratégia, identidade e execução em cada projeto para construir presença real.
             </p>
           </motion.div>
@@ -100,22 +100,22 @@ const About = () => {
           >
             <div className="max-w-3xl mx-auto text-center flex flex-col gap-8 md:gap-12">
               <div className="flex flex-col gap-6">
-                <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+                <p className="text-muted-foreground font-body text-base md:text-base leading-relaxed max-w-xl mx-auto">
                   Cada projeto começa na definição de direção, narrativa e posicionamento, porque não é o volume que constrói relevância, mas a clareza de como um artista é percebido. Por isso, não trabalhamos para produzir mais, mas para construir presença, unindo estratégia, identidade e execução em cada projeto.
                 </p>
-                <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+                <p className="text-muted-foreground font-body text-base md:text-base leading-relaxed max-w-xl mx-auto">
                   Antes de qualquer câmera ligada, existe um processo de entender quem é o artista, o que ele comunica hoje e o que quer que comuniquem sobre ele amanhã. Esse intervalo entre o que é e o que precisa ser percebido, é onde o trabalho da Vinden começa de verdade.
                 </p>
               </div>
 
               <div className="py-8 md:py-12">
-                <p className="text-foreground/80 font-artistic text-xl md:text-4xl font-light italic">
+                <p className="text-foreground/80 font-artistic text-2xl md:text-4xl font-light italic">
                   "O que você mostra define o que percebem"
                 </p>
               </div>
 
               <div className="flex flex-col gap-6">
-                <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+                <p className="text-muted-foreground font-body text-base md:text-base leading-relaxed max-w-xl mx-auto">
                   Trabalhamos com quem entende que ser consistente é diferente de aparecer com frequência. Nossos clientes sabem que cada projeto precisa deixar uma marca e construir reconhecimento, sabem que devem fazer com que a próxima pessoa que chegar ao perfil ou assistir a um vídeo entenda imediatamente o que você representa
                 </p>
               </div>
@@ -129,12 +129,12 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display italic text-3xl md:text-5xl font-light text-center text-foreground mb-24 px-6 uppercase"
+              className="font-display italic text-4xl md:text-5xl text-center text-foreground mb-24 px-6 [transform:skewX(-15deg)]"
             >
               Fundadores
             </motion.h2>
 
-            <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6 uppercase">
+            <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6">
               {founders.map((founder, i) => (
                 <motion.div
                   key={founder.name}
@@ -156,10 +156,10 @@ const About = () => {
                     <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-body">
                       {founder.role}
                     </span>
-                    <h3 className="font-display italic text-3xl md:text-5xl font-light text-foreground">
+                    <h3 className="font-display italic text-4xl md:text-5xl text-foreground [transform:skewX(-15deg)]">
                       {founder.name}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-md lowercase">
+                    <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-md lowercase">
                       {founder.bio}
                     </p>
                   </div>
