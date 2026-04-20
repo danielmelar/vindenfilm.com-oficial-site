@@ -13,7 +13,7 @@ const Index = () => {
     offset: ["start start", "end end"]
   });
 
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.4, 0.8, 0.95]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 0.85, 0.95]);
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-background">
@@ -21,7 +21,7 @@ const Index = () => {
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0 pointer-events-none">
         <iframe
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full pointer-events-none scale-105"
-          src="https://www.youtube.com/embed/9PaW0Zs93Uk?autoplay=1&mute=1&loop=1&playlist=9PaW0Zs93Uk&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
+          src="https://www.youtube.com/embed/HuArEFUDAe0?autoplay=1&mute=1&loop=1&playlist=HuArEFUDAe0&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
           title="Background Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
