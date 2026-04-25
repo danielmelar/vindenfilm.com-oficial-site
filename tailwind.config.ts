@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Apple Garamond', 'serif'],
+        display: ['Frunchy Sage', 'serif'],
         body: ['Montserrat', 'system-ui', 'sans-serif'],
-        artistic: ['Apple Garamond', 'serif'],
+        artistic: ['Frunchy Sage', 'serif'],
         montserrat: ['Montserrat', 'sans-serif'],
-        garamond: ['Apple Garamond', 'serif'],
+        garamond: ['Frunchy Sage', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
