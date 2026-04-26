@@ -79,8 +79,8 @@ const About = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="max-w-3xl text-center"
           >
-            <h1 className="font-display italic text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 tracking-[-0.05em] [transform:skewX(-15deg)]">
-              Sobre a Vinden
+            <h1 className="font-display italic text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 tracking-[-0.05em]">
+              <span className="inline-block [transform:skewX(-15deg)] [transform-origin:left]">Sobre a Vinden</span>
             </h1>
             <p className="text-muted-foreground font-body text-base md:text-base leading-relaxed max-w-2xl mx-auto">
               A Vinden existe para construir imagem com intenção. Unindo estratégia, identidade e execução em cada projeto para construir presença real.
@@ -129,9 +129,9 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display italic uppercase text-4xl md:text-5xl text-center text-foreground mb-24 px-6 [transform:skewX(-15deg)]"
+              className="font-display italic uppercase text-4xl md:text-5xl text-center text-foreground mb-24 px-6"
             >
-              Fundadores
+              <span className="inline-block [transform:skewX(-15deg)] [transform-origin:center]">Fundadores</span>
             </motion.h2>
 
             <div className="max-w-6xl mx-auto flex flex-col gap-32 md:gap-48 px-6">
@@ -152,12 +152,14 @@ const About = () => {
                     />
                   </div>
                   
-                  <div className={`flex flex-col gap-4 md:w-1/2 ${i % 2 !== 0 ? "md:text-right md:items-end" : "md:text-left md:items-start"}`}>
+                  <div className={`flex flex-col gap-2 md:w-1/2 ${i % 2 !== 0 ? "md:text-right md:items-end" : "md:text-left md:items-start"}`}>
                     <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-body">
                       {founder.role}
                     </span>
-                    <h3 className="font-display italic uppercase text-4xl md:text-5xl text-foreground [transform:skewX(-15deg)]">
-                      {founder.name}
+                    <h3 className="font-display italic text-6xl md:text-7xl text-foreground">
+                      <span className={`inline-block [transform:skewX(-15deg)] ${i % 2 !== 0 ? "[transform-origin:right]" : "[transform-origin:left]"}`}>
+                        {founder.name}
+                      </span>
                     </h3>
                     <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-md lowercase">
                       {founder.bio}

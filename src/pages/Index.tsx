@@ -48,9 +48,9 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-4 md:w-[45%]">
-              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
-                Não produzimos conteúdo<br />
-                <span className="text-gradient-gold">Construímos imagem</span>
+              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight">
+                <span className="block [transform:skewX(-15deg)] [transform-origin:left]">Não produzimos conteúdo</span>
+                <span className="text-gradient-gold block [transform:skewX(-15deg)] [transform-origin:left]">Construímos imagem</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-lg">
                 A Vinden Film existe para construir imagens com intenção. Trabalhamos com artistas e marcas que entendem que estética não é detalhe, é estratégia. Não buscamos volume. Buscamos projetos que exigem mais do que apenas execução.
@@ -69,9 +69,9 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-4 md:w-[45%]">
-              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
-                Imagens com<br />
-                <span className="text-gradient-gold">intenção</span>
+              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight">
+                <span className="block [transform:skewX(-15deg)] [transform-origin:left]">Imagens com</span>
+                <span className="text-gradient-gold block [transform:skewX(-15deg)] [transform-origin:left]">Propósito</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-lg">
                 Cada escolha visual comunica algo, ou expõe a falta de direção. Na Vinden, direção, captação e pós-produção não são etapas isoladas, mas um único processo criativo. O resultado são narrativas visuais que constroem percepção e consolidam o posicionamento de cada projeto.
@@ -90,9 +90,9 @@ const Index = () => {
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
             <div className="flex flex-col gap-4 md:w-[45%]">
-              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
-                Vamos conversar sobre<br />
-                <span className="text-gradient-gold">seu projeto</span>
+              <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight">
+                <span className="block [transform:skewX(-15deg)] [transform-origin:left]">Vamos conversar sobre</span>
+                <span className="text-gradient-gold block [transform:skewX(-15deg)] [transform-origin:left]">seu projeto</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-lg">
                Se você busca uma produção audiovisual que vai além da execução técnica, que entende o poder da imagem como ferramenta estratégica, entre em contato. Queremos ouvir sobre o seu projeto.
