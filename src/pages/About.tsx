@@ -129,7 +129,7 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display italic text-4xl md:text-5xl text-center text-foreground mb-24 px-6 [transform:skewX(-15deg)]"
+              className="font-display italic uppercase text-4xl md:text-5xl text-center text-foreground mb-24 px-6 [transform:skewX(-15deg)]"
             >
               Fundadores
             </motion.h2>
@@ -156,7 +156,7 @@ const About = () => {
                     <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-body">
                       {founder.role}
                     </span>
-                    <h3 className="font-display italic text-4xl md:text-5xl text-foreground [transform:skewX(-15deg)]">
+                    <h3 className="font-display italic uppercase text-4xl md:text-5xl text-foreground [transform:skewX(-15deg)]">
                       {founder.name}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed font-body text-base md:text-base max-w-md lowercase">

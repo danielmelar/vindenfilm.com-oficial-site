@@ -47,7 +47,7 @@ const Index = () => {
         {/* Section 1 - Sobre */}
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div className="flex flex-col gap-6 md:w-[45%]">
+            <div className="flex flex-col gap-4 md:w-[45%]">
               <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
                 Não produzimos conteúdo<br />
                 <span className="text-gradient-gold">Construímos imagem</span>
@@ -68,7 +68,7 @@ const Index = () => {
         {/* Section 2 - Trabalhos */}
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
-            <div className="flex flex-col gap-6 md:w-[45%]">
+            <div className="flex flex-col gap-4 md:w-[45%]">
               <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
                 Imagens com<br />
                 <span className="text-gradient-gold">intenção</span>
@@ -89,7 +89,7 @@ const Index = () => {
         {/* Section 3 - Contato */}
         <section className="py-32 md:py-56 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div className="flex flex-col gap-6 md:w-[45%]">
+            <div className="flex flex-col gap-4 md:w-[45%]">
               <h2 className="font-display italic text-4xl md:text-5xl text-foreground leading-tight [transform:skewX(-15deg)]">
                 Vamos conversar sobre<br />
                 <span className="text-gradient-gold">seu projeto</span>
