@@ -33,7 +33,7 @@ const Footer = () => {
             </h4>
             <div className="flex flex-col gap-2 text-sm text-foreground font-body">
               <span>vindenfilm.com</span>
-              <span>+55 (11) 996317-1341</span>
+              <span>+55 (11) 96317-1341</span>
               <span>São Paulo, Brasil</span>
             </div>
           </div>
